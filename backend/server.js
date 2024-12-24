@@ -3,7 +3,8 @@ const app = express();
 
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const authRouter = require("./routes/authRouter");
+const authRouter = require("./routes/AuthRouter");
+const productsRouter = require("./routes/ProductsRouter");
 
 require("dotenv").config();
 require("./dbconnections/db");
@@ -30,6 +31,7 @@ app.use("/ping", (req, res) => {
   res.send("Hello from the backend PONG");
 });
 app.use("/api/v1/auth", authRouter);
+app.use("/api/v1/product", productsRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
