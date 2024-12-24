@@ -1,4 +1,5 @@
 const { UserModel } = require("../models/User");
+const bcrypt = require("bcrypt");
 
 const signup = async (req, res) => {
     console.log("Inside signup controller");

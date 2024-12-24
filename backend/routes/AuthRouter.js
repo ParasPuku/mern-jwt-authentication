@@ -4,6 +4,6 @@ const { signupValidation, loginValidation } = require("../middlewares/signupVali
 
 // router.post("/login", loginValidation, login);
 console.log('Hello Ram33')
-router.post("/signup", signup);
+router.post("/signup", signupValidation, signup);
 
 module.exports = router;
