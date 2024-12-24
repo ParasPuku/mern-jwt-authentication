@@ -1,6 +1,8 @@
 const Joi = require('joi');
 
 const signupValidation = (req, res, next) => {
+    console.log('Hello Ram1')
+
     const schema = Joi.object({
         name: Joi.string().min(3).max(100).required(),
         email: Joi.string().email().required(),
@@ -12,7 +14,6 @@ const signupValidation = (req, res, next) => {
     if (error) {
         return res.status(400).json({ message: "Bad Request", error });
     }
-    console.log('Hello Ram1')
     next();
 } 
 

@@ -1,7 +1,7 @@
 const { UserModel } = require("../models/User");
 
 const signup = async (req, res) => {
-  // Logic for login goes here
+    console.log("Inside signup controller");
   try {
     console.log('Hello Ram')
     const { name, email, password } = req.body;
