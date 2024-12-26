@@ -1,6 +1,7 @@
 const checkAuthentication = require("../middlewares/checkAuthentication");
 const router = require("express").Router();
 router.get("/getAllProducts", checkAuthentication, (req, res) => {
+    console.log("-----Logged In User Details---", req.user)
     res.status(200).json({
       success: true,
       data: [

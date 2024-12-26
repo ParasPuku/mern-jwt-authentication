@@ -1,0 +1,14 @@
+.container {
+  .product-container {
+    .product-details {
+      border-bottom: 1px solid #333;
+      padding: 8px 0;
+      div {
+        margin: 5px 0;
+      }
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
