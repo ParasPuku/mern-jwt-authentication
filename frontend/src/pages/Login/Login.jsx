@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { ToastContainer } from "react-toastify";
 import "../Login/Login.style.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { handleError, handleSuccess } from "../../utilities/util";
 import Header from "../../components/Header/Header";
 const Login = () => {
-  const [loginInfo, setLoginInfo] = React.useState({
+  const [loginInfo, setLoginInfo] = useState({
     email: "",
     password: "",
   });
@@ -57,6 +57,9 @@ const Login = () => {
       handleError(error);
     }
   };
+  const handleForgotClick = () => {
+    navigate("/forgot-password");
+  };
   return (
     <div className="top-container">
       <Header />
@@ -83,12 +86,18 @@ const Login = () => {
               value={loginInfo.password}
             />
           </div>
+          <div className="middle-container">
+            {/* <div className="remember-checkbox-container">
+              <input type="checkbox" className="checkbox" />
+              <div className="remember-me">Remember me</div>
+            </div> */}
+            <div className="forgot-password" onClick={handleForgotClick}>Forgot password?</div>
+          </div>
           <button type="submit">Login</button>
           <span>
-            Doesn't have an account?<Link to="/signup">Signup</Link>
+            Don't have an account? <Link to="/signup">Signup</Link>
           </span>
         </form>
-        <ToastContainer autoClose={3000} />
       </div>
     </div>
   );

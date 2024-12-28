@@ -36,9 +36,15 @@ body {
     gap: 10px;
 }
 
-.container div {
+.top-container .container .middle-container {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.top-container .container .remember-checkbox-container {
+    display: flex;
+    align-items: center;
 }
 
 .container input {
