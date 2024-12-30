@@ -15,6 +15,14 @@ const userSchema = new Schema({
         type: String,
         required: true,
     },
+    resetPasswordToken: {
+        type: String,
+        default: null, // Stores the token for resetting the password
+    },
+    resetPasswordExpires: {
+        type: Date,
+        default: null, // Stores the expiry time of the token
+    },
     isActive: {
         type: Boolean,
         default: true,
